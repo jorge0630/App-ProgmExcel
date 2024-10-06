@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div class="container">
+
+        <form action="/uploads" method="POST" enctype="multipart/form-data">
+            <label for="formFile" class="form-label"><h2>Cargar Programación</h2></label>
+            <input class="form-control" type="file" name="file_excel" accept=".xlsx, .xls" required>
+            <button class="btn btn-success" type="submit">Subir Archivo</button>
+        </form>
+    </div>
+
+    <div class="contec-table">
+        <a href="{{ url_for ('tabla') }}">Programación</a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layout.html'%}
+
+
+{% block body %}
+<form name="formSearch" method="POST" action="/buscar_partidos" autocapitalize="off" class="search">
+    <input type="search" class="search__input" name="buscar" required>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <td scope="col">HORA</td>
+            <td scope="col">PARTIDO</td>
+            <td scope="col">CATEGORIA</td>
+            <td scope="col">CANCHA</td>
+            <td scope="col">FECHA</td>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider" >
+        {% for p in partido %}
+            <tr>
+                <td scope="row">{{p.1}}</td>
+                <td scope="row"><a href="partido/{{p.0}}">{{p.2}} vs {{p.3}}</a></td>
+                <td scope="row">{{p.4}}</td>
+                <td scope="row">{{p.5}}</td>
+                <td scope="row">{{p.6}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

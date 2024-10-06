@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div id="resultado" class="text-center">
+    <h4 class="text-center">Resultado <hr></h4>
+    {% if (resul) %} <!--Si existe-->
+    <table class="table">
+        <thead>
+            <tr>
+                <td scope="col">HORA</td>
+                <td scope="col">PARTIDO</td>
+                <td scope="col">CATEGORIA</td>
+                <td scope="col">CANCHA</td>
+                <td scope="col">FECHA</td>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider" >
+    
+            {% for p in resul %}
+                <tr>
+                    <td scope="row">{{p.hora}}</td>
+                    <td scope="row"><a href="partido/{{p.id}}">{{p.equipoLocal}} vs {{p.equipoVisitante}}</a></td>
+                    <td scope="row">{{p.categoria}}</td>
+                    <td scope="row">{{p.cancha}}</td>
+                    <td scope="row">{{p.fecha}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+        
+    {% else %}
+        <p>No hay resultados para la busqueda:
+            <strong class="busq colorCrimson"> {{ busqueda }}</strong>
+        </p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

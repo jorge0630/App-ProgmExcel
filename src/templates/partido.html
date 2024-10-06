@@ -1,0 +1,26 @@
+{%extends 'layout.html' %}
+
+{% block body %}
+<div class="text-center">
+        <h1></h1>
+        {% for p in partido %}
+    <section>
+        <P>
+            Partido: <strong> {{p.2}}   VS  {{p.3}} </strong>
+        </P>
+        <p>
+            Cancha: <strong> {{p.5}} </strong>
+        </p>
+        <p>
+            categoria: <strong> {{p.4}} </strong>
+        </p>
+        <p>
+            Hora: <strong> {{p.1}} </strong>
+        </p>
+        <p>
+            Fecha: <strong> {{p.6}} </strong>
+        </p>
+    </section>
+        {% endfor %}
+</div>
+{% endblock %}

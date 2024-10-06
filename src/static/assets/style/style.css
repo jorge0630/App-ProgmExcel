@@ -1,0 +1,43 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    height: 90px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+.logo{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contec-table{
+    text-align: center;
+}
+
+/* a{
+    display: inline-block;
+    padding: 10px;
+    background-color: lightblue;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 25px;
+} */
+
+.logo img{
+    height: 110px;
+}
