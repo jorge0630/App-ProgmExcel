@@ -1,5 +1,9 @@
 {% extends 'layout.html' %}
 
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/style/style.css') }}">
+{% endblock %}
+
 {% block body %}
 <div id="resultado" class="text-center">
     <h4 class="text-center">Resultado <hr></h4>
@@ -18,11 +22,11 @@
     
             {% for p in resul %}
                 <tr>
-                    <td scope="row">{{p.hora}}</td>
-                    <td scope="row"><a href="partido/{{p.id}}">{{p.equipoLocal}} vs {{p.equipoVisitante}}</a></td>
-                    <td scope="row">{{p.categoria}}</td>
-                    <td scope="row">{{p.cancha}}</td>
-                    <td scope="row">{{p.fecha}}</td>
+                    <td scope="row">{{p.1}}</td>
+                    <td scope="row"><a href="partido/{{p.0}}">{{p.2}} vs {{p.3}}</a></td>
+                    <td scope="row">{{p.4}}</td>
+                    <td scope="row">{{p.5}}</td>
+                    <td scope="row">{{p.6}}</td>
                 </tr>
             {% endfor %}
         </tbody>

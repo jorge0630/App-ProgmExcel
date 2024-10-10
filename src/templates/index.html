@@ -1,6 +1,11 @@
 {% extends 'layout.html' %}
 
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/style/style.css') }}">
+{% endblock %}
+
 {% block body %}
+<a class="btn btn-secondary" href="{{url_for ('logout')}}">Logaut</a>
 
     <div class="container">
 

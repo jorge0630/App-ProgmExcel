@@ -1,10 +1,21 @@
 {% extends 'layout.html'%}
 
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/style/style.css') }}">
+{% endblock %}
+
 
 {% block body %}
-<form name="formSearch" method="POST" action="/buscar_partidos" autocapitalize="off" class="search">
-    <input type="search" class="search__input" name="buscar" required>
-    <button type="submit" class="btn btn-primary">Buscar</button>
+<form name="formSearch" method="POST" action="/buscar_partidos" autocapitalize="off" class="search w-100">
+    <div class="row">
+      <div class="col-10">
+        <input type="search" class="form-control search__input w-100" name="buscar" placeholder="Buscar partidos..." required>
+      </div>
+      <div class="col-2">
+        <button type="submit" class="btn btn-success w-100">Buscar</button>
+      </div>
+    </div>
+
 </form>
 <table class="table">
     <thead>
@@ -28,5 +39,6 @@
         {% endfor %}
     </tbody>
 </table>
+
 
 {% endblock %}
